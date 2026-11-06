@@ -1,4 +1,4 @@
-# Hệ chuyên gia phân loại & định tuyến ticket Helpdesk CNTT — FINAL V2
+# Hệ chuyên gia phân loại & định tuyến ticket Helpdesk CNTT
 
 Prototype học thuật cho Tổ CNTT bệnh viện.
 
@@ -69,7 +69,3 @@ Kết quả mong đợi:
 
 ## Lưu ý học thuật
 ITIL 4 được sử dụng làm khung Incident Management. Ma trận Impact/Urgency, ngưỡng số người bị ảnh hưởng và SLA trong prototype là cấu hình giả định của đồ án/bệnh viện mẫu, không phải các giá trị bắt buộc của ITIL.
-
-
-## Ticket ID tự động
-Mã ticket được sinh tự động từ SQLite theo dạng `HD-001`, `HD-002`, ... và tiếp tục đúng sau khi khởi động lại ứng dụng. Người dùng không cần nhập mã thủ công.
