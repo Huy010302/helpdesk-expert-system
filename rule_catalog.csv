@@ -1,0 +1,46 @@
+﻿rule_id,stage,name,salience,explanation
+C01,classification,Network - mất/chậm kết nối mạng,800,"Triệu chứng mất mạng, mạng chậm hoặc không Internet tạo ứng viên Network; affected_system chỉ là fact bổ trợ."
+C02,classification,Network - sự cố kết nối diện rộng,820,Sự cố kết nối ảnh hưởng khoa/phòng hoặc toàn bệnh viện ưu tiên phân loại Network.
+C03,classification,Account - khóa/reset tài khoản,700,Khóa tài khoản hoặc yêu cầu reset mật khẩu thuộc nhóm Account.
+C04,classification,Account - không đăng nhập tài khoản chung,690,Không đăng nhập trong ngữ cảnh tài khoản/email/máy trạm tạo ứng viên Account.
+C05,classification,Email - gửi/nhận/quota,650,Lỗi gửi/nhận email hoặc đầy hộp thư thuộc nhóm Email.
+C06,classification,Hardware - lỗi vật lý/nguồn,600,Dấu hiệu nguồn hoặc linh kiện vật lý tạo ứng viên Hardware.
+C07,classification,Software - crash/OS/cài đặt,550,"Crash phần mềm, lỗi hệ điều hành hoặc yêu cầu cài đặt thuộc nhóm Software."
+C08,classification,Printer - lỗi in/online/kẹt giấy,850,Lỗi vận hành máy in trên asset Printer tạo ứng viên Printer với ưu tiên phân loại cao hơn Network.
+C09,classification,Business Application - ứng dụng nghiệp vụ lỗi/ngừng,900,HIS/PACS/LIS/EMR không khả dụng hoặc báo lỗi thuộc Business Application.
+C10,classification,Business Application - ứng dụng lâm sàng chậm,890,Hiệu năng chậm của hệ thống lâm sàng tạo ứng viên Business Application.
+C11,classification,Access/Permission - yêu cầu cấp quyền,750,Yêu cầu cấp quyền được phân loại Access/Permission.
+C12,classification,Access/Permission - bị từ chối quyền,760,Không đủ quyền hoặc bị từ chối truy cập tạo ứng viên Access/Permission.
+C13,classification,Security - phishing/email đáng ngờ,1000,Email đáng ngờ hoặc nghi phishing được ưu tiên phân loại Security Incident.
+C14,classification,Security - mã độc/truy cập trái phép,1010,Cảnh báo mã độc hoặc truy cập trái phép thuộc Security Incident.
+C15,classification,Security - dấu hiệu ransomware,1020,Mã hóa dữ liệu hoặc ransom note là tín hiệu Security Incident có độ ưu tiên phân loại rất cao.
+I01,impact_urgency,Impact CRITICAL - bệnh nhân đang chờ,980,Luồng công việc lâm sàng bị ảnh hưởng trong khi bệnh nhân đang chờ tạo impact CRITICAL.
+I02,impact_urgency,Impact CRITICAL - hệ thống trọng yếu ngừng,970,Hệ thống trọng yếu ngừng hoàn toàn tạo impact CRITICAL.
+I03,impact_urgency,Impact HIGH - toàn bệnh viện hoặc >=50 người,860,Phạm vi quy mô toàn bệnh viện (suy ra từ affected_users) hoặc >=50 người tạo impact HIGH.
+I04,impact_urgency,Impact HIGH - khoa/phòng hoặc 10-49 người,850,Phạm vi quy mô khoa/phòng (suy ra từ affected_users) hoặc 10-49 người tạo impact HIGH.
+I05,impact_urgency,Impact MEDIUM - 2-9 người,700,Ảnh hưởng 2-9 người được xem là impact MEDIUM trong cấu hình đồ án.
+I06,impact_urgency,Impact LOW - một người dùng,600,Ticket đơn lẻ được xem là impact LOW nếu không có luật impact cao hơn.
+U01,impact_urgency,Urgency CRITICAL - bệnh nhân đang chờ,990,"Khi bệnh nhân đang chờ một quy trình CNTT lâm sàng, urgency được đẩy lên CRITICAL."
+U02,impact_urgency,Urgency HIGH - Security đang hoạt động,900,"Security Incident đang diễn ra yêu cầu xử lý khẩn, urgency HIGH."
+U03,impact_urgency,Urgency HIGH - không workaround + deadline,880,Không có phương án thay thế và có deadline công việc tạo urgency HIGH.
+U04,impact_urgency,Urgency HIGH - VIP bị gián đoạn,870,Người dùng VIP bị gián đoạn hoàn toàn tạo urgency HIGH theo quy tắc nội bộ của đồ án.
+U05,impact_urgency,Urgency mặc định theo workaround,500,"Nếu không có yếu tố khẩn cao hơn, có workaround -> LOW; không có workaround -> MEDIUM."
+P01,priority,P1 - impact CRITICAL,1000,Impact CRITICAL luôn tạo P1.
+P02,priority,P1 - urgency CRITICAL,990,Urgency CRITICAL luôn tạo P1.
+P03,priority,P1 - HIGH x HIGH,950,Impact HIGH và urgency HIGH tạo P1.
+P04,priority,P2 - HIGH/MEDIUM kết hợp,850,Một chiều HIGH và chiều còn lại MEDIUM tạo P2.
+P05,priority,"P2 - impact HIGH, urgency LOW",830,Impact HIGH vẫn giữ P2 dù có workaround.
+P06,priority,P3 - MEDIUM/MEDIUM hoặc LOW/HIGH,700,Tổ hợp MEDIUM/MEDIUM hoặc LOW/HIGH tạo P3.
+P07,priority,P3 - MEDIUM/LOW hoặc LOW/MEDIUM,680,Tổ hợp MEDIUM/LOW hoặc LOW/MEDIUM tạo P3.
+P08,priority,P4 - LOW x LOW,600,Impact LOW và urgency LOW tạo P4.
+R01,routing,Route Network,800,Ticket Network được định tuyến đến đội Network.
+R02,routing,Route Account/Permission,780,Account và Access/Permission được định tuyến đến System.
+R03,routing,Route Email,760,Email được định tuyến đến System.
+R04,routing,Route Hardware,740,Hardware ban đầu được định tuyến Helpdesk để xác minh/đổi thiết bị cơ bản.
+R05,routing,Route Software,730,Software thông thường được định tuyến Helpdesk.
+R06,routing,Route Printer,720,Printer được định tuyến Helpdesk ở bước đầu.
+R07,routing,Route Business Application,900,HIS/PACS/LIS/EMR được định tuyến Application.
+R08,routing,Route Security,1000,Security Incident được định tuyến Security.
+E01,escalation,Escalate P1 ngay Level 2/3,1000,Mọi ticket P1 phải được escalation ngay.
+E02,escalation,P1 Security báo đồng thời Tổ ATTT,1100,P1 Security Incident có escalation đồng thời đến Tổ ATTT.
+E03,escalation,P2 trọng yếu chuyển Level 2,850,P2 liên quan hệ thống trọng yếu hoặc luồng lâm sàng cần escalation sớm.

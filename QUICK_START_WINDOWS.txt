@@ -1,0 +1,40 @@
+HƯỚNG DẪN CHẠY NHANH TRÊN WINDOWS POWERSHELL
+================================================
+
+1) Mở PowerShell tại thư mục project.
+
+2) Cài thư viện:
+   python -m ensurepip --upgrade
+   python -m pip install -r requirements.txt
+
+3) Chạy test:
+   python test_cases.py
+
+   Kết quả đúng:
+   RESULT: 20/20 passed
+   SCOPE DERIVATION: PASS
+   REGRESSION TESTS: PASS
+
+4) Chạy giao diện:
+   python -m streamlit run app.py
+
+5) Mở trình duyệt:
+   http://localhost:8501
+
+TEST LỖI ĐÃ SỬA
+----------------
+Hệ thống: Other
+Triệu chứng: Mạng chậm
+Số người bị ảnh hưởng: 1
+Không workaround
+
+Kết quả mong đợi:
+Network / P3 / Network / SLA 4 giờ
+Trace phải có C01.
+
+LƯU Ý
+-----
+- Không dùng lệnh "pip" hoặc "streamlit" trực tiếp nếu Windows chưa có PATH.
+- Hãy dùng "python -m pip" và "python -m streamlit" như trên.
+
+Lưu ý: Mã ticket được tự động sinh HD-001, HD-002, ... từ SQLite. Không cần nhập tay.

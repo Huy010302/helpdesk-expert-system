@@ -1,0 +1,28 @@
+TC01: expected=('Network', 'P3', 'Network'), got=('Network', 'P3', 'Network') -> PASS
+TC02: expected=('Network', 'P1', 'Network'), got=('Network', 'P1', 'Network') -> PASS
+TC03: expected=('Account', 'P3', 'System'), got=('Account', 'P3', 'System') -> PASS
+TC04: expected=('Account', 'P4', 'System'), got=('Account', 'P4', 'System') -> PASS
+TC05: expected=('Email', 'P2', 'System'), got=('Email', 'P2', 'System') -> PASS
+TC06: expected=('Hardware', 'P3', 'Helpdesk'), got=('Hardware', 'P3', 'Helpdesk') -> PASS
+TC07: expected=('Printer', 'P1', 'Helpdesk'), got=('Printer', 'P1', 'Helpdesk') -> PASS
+TC08: expected=('Software', 'P3', 'Helpdesk'), got=('Software', 'P3', 'Helpdesk') -> PASS
+TC09: expected=('Business Application', 'P1', 'Application'), got=('Business Application', 'P1', 'Application') -> PASS
+TC10: expected=('Business Application', 'P1', 'Application'), got=('Business Application', 'P1', 'Application') -> PASS
+TC11: expected=('Access/Permission', 'P4', 'System'), got=('Access/Permission', 'P4', 'System') -> PASS
+TC12: expected=('Access/Permission', 'P2', 'System'), got=('Access/Permission', 'P2', 'System') -> PASS
+TC13: expected=('Security Incident', 'P4', 'Security'), got=('Security Incident', 'P4', 'Security') -> PASS
+TC14: expected=('Security Incident', 'P3', 'Security'), got=('Security Incident', 'P3', 'Security') -> PASS
+TC15: expected=('Security Incident', 'P1', 'Security'), got=('Security Incident', 'P1', 'Security') -> PASS
+TC16: expected=('Security Incident', 'P3', 'Security'), got=('Security Incident', 'P3', 'Security') -> PASS
+   scope= single_user related= Hardware candidates= [('Security Incident', 'C14'), ('Hardware', 'C06')]
+TC17: expected=('Business Application', 'P3', 'Application'), got=('Business Application', 'P3', 'Application') -> PASS
+   scope= single_user related= Account candidates= [('Business Application', 'C09'), ('Account', 'C03')]
+TC18: expected=('Printer', 'P4', 'Helpdesk'), got=('Printer', 'P4', 'Helpdesk') -> PASS
+   scope= single_user related= Network candidates= [('Printer', 'C08'), ('Network', 'C01')]
+TC19: expected=('Network', 'P3', 'Network'), got=('Network', 'P3', 'Network') -> PASS
+   scope= single_user related= None candidates= [('Network', 'C01')]
+TC20: expected=('Unclassified', 'P3', 'Helpdesk'), got=('Unclassified', 'P3', 'Helpdesk') -> PASS
+   scope= single_user related= None candidates= []
+RESULT: 20/20 passed
+SCOPE DERIVATION: PASS
+REGRESSION TESTS: PASS
